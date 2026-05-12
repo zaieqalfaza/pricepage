@@ -1,0 +1,255 @@
+/* ===== PriceCraft Landing Page — Custom Styles ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #050505;
+  color: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: rgba(34,197,94,0.3); color: #4ade80; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 3px; }
+
+/* ===== Animations ===== */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(34,197,94,0.2); }
+  50% { box-shadow: 0 0 40px rgba(34,197,94,0.4), 0 0 80px rgba(34,197,94,0.1); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Reveal Classes ===== */
+.reveal { animation: reveal 0.8s cubic-bezier(0.2,0.8,0.2,1) both; }
+.delay-100 { animation-delay: .1s }
+.delay-200 { animation-delay: .2s }
+.delay-300 { animation-delay: .3s }
+.delay-400 { animation-delay: .4s }
+.delay-500 { animation-delay: .5s }
+.delay-600 { animation-delay: .6s }
+.delay-700 { animation-delay: .7s }
+
+/* ===== Animation Utilities ===== */
+.float-animation { animation: float 6s ease-in-out infinite; }
+.pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+.shimmer-text {
+  background: linear-gradient(90deg, #4ade80, #fff, #4ade80);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ===== Border & Glow Effects ===== */
+.green-border-glow {
+  border: 1px solid rgba(34,197,94,0.3);
+  box-shadow: inset 0 0 15px rgba(34,197,94,0.05), 0 0 20px rgba(34,197,94,0.1);
+}
+.green-glow-strong {
+  box-shadow: 0 0 40px rgba(34,197,94,0.3), 0 0 80px rgba(34,197,94,0.1);
+}
+
+/* ===== Background Effects ===== */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(34,197,94,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,197,94,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== Section Reveal ===== */
+.section-hidden {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.2,0.8,0.2,1), transform 0.8s cubic-bezier(0.2,0.8,0.2,1);
+}
+.section-hidden.reveal-wait {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== CTA Button ===== */
+.cta-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+.cta-btn:hover::before { left: 100%; }
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(34,197,94,0.4);
+}
+
+/* ===== Feature Card ===== */
+.feature-card {
+  background: linear-gradient(135deg, rgba(34,197,94,0.05), rgba(10,10,10,0.8));
+  border: 1px solid rgba(34,197,94,0.1);
+  transition: all 0.4s ease;
+}
+.feature-card:hover {
+  border-color: rgba(34,197,94,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(34,197,94,0.1);
+}
+
+/* ===== Pricing Highlight ===== */
+.pricing-highlight {
+  background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(10,10,10,0.9));
+  border: 2px solid rgba(34,197,94,0.4);
+  position: relative;
+}
+.pricing-highlight::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.3), transparent, rgba(34,197,94,0.1));
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+/* ===== Testimonial Card ===== */
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(34,197,94,0.03), rgba(20,20,20,0.9));
+  border: 1px solid rgba(34,197,94,0.1);
+  transition: all 0.4s ease;
+}
+.testimonial-card:hover {
+  border-color: rgba(34,197,94,0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== FAQ ===== */
+.faq-item {
+  border: 1px solid rgba(34,197,94,0.1);
+  transition: all 0.3s ease;
+}
+.faq-item:hover { border-color: rgba(34,197,94,0.25); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-answer.open { max-height: 300px; }
+
+/* ===== Step Connector ===== */
+.step-connector { position: relative; }
+.step-connector::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 56px;
+  bottom: -8px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(34,197,94,0.4), rgba(34,197,94,0.05));
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-menu.open { transform: translateX(0); }
+
+/* ===== Toast ===== */
+.toast {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Particles Canvas ===== */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Screenshot Tabs & Panels ===== */
+.screenshot-tab { cursor: pointer; transition: all 0.3s ease; }
+.screenshot-tab.active {
+  border-color: rgba(34,197,94,0.6) !important;
+  background: rgba(34,197,94,0.1) !important;
+}
+.screenshot-panel {
+  display: none;
+  animation: reveal 0.5s ease both;
+}
+.screenshot-panel.active { display: block; }
+
+.screenshot-frame {
+  border: 1px solid rgba(34,197,94,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(34,197,94,0.08), 0 20px 60px rgba(0,0,0,0.4);
+  transition: all 0.4s ease;
+}
+.screenshot-frame:hover {
+  box-shadow: 0 0 40px rgba(34,197,94,0.15), 0 25px 70px rgba(0,0,0,0.5);
+  transform: translateY(-4px);
+}
+
+/* ===== Critical Fallback Styles (if Tailwind CDN fails) ===== */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+nav > div { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+nav .flex { display: flex; align-items: center; justify-content: space-between; }
+section { position: relative; padding: 5rem 0; overflow: hidden; }
+section > div { max-width: 1024px; margin: 0 auto; padding: 0 1rem; position: relative; z-index: 10; }
+img { max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+table { width: 100%; border-collapse: collapse; }

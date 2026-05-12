@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PriceCraft — Kalkulator Harga Jual #1 Indonesia</title>
+  <meta name="description" content="Kalkulator harga jual otomatis untuk 4 marketplace Indonesia. Bayar sekali, pakai selamanya." />
+  <meta name="keywords" content="PriceCraft, kalkulator harga jual, Shopee, Tokopedia, TikTok Shop, Lazada, seller Indonesia" />
+  <link rel="icon" href="https://z-cdn-media.chatglm.cn/files/e34bdd10-ef14-46d6-890c-cb0131309c01.png?auth_key=1878468658-296b2fa3b94346ed9fdf8fadb8e7986c-0-7d4a9c1e5b8af71b1fe91da6f1f55a07" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Iconify Icons -->
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3670436406567095');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3670436406567095&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #050505;
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection { background: rgba(34,197,94,0.3); color: #4ade80; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 3px; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; background: none; border: none; }
+    table { width: 100%; border-collapse: collapse; }
+
+    /* ===== LAYOUT ===== */
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .grid { display: grid; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+
+    /* ===== DISPLAY ===== */
+    .hidden { display: none; }
+    .block { display: block; }
+    .inline-block { display: inline-block; }
+    .inline { display: inline; }
+
+    /* ===== POSITION ===== */
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .fixed { position: fixed; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .bottom-0 { bottom: 0; }
+    .-top-3 { top: -0.75rem; }
+
+    /* ===== TRANSFORM ===== */
+    .-translate-x-1\/2 { transform: translateX(-50%); }
+    .-translate-y-1\/2 { transform: translateY(-50%); }
+    .scale-\[1\.02\] { transform: scale(1.02); }
+    .scale-105 { transform: scale(1.05); }
+
+    /* ===== Z-INDEX ===== */
+    .z-0 { z-index: 0; }
+    .z-10 { z-index: 10; }
+    .z-40 { z-index: 40; }
+    .z-50 { z-index: 50; }
+    .-z-10 { z-index: -10; }
+
+    /* ===== SIZING ===== */
+    .w-full { width: 100%; }
+    .w-auto { width: auto; }
+    .h-full { height: 100%; }
+    .h-auto { height: auto; }
+    .min-h-screen { min-height: 100vh; }
+    .max-w-2xl { max-width: 42rem; }
+    .max-w-3xl { max-width: 48rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .max-w-5xl { max-width: 64rem; }
+    .max-w-6xl { max-width: 72rem; }
+    .max-w-7xl { max-width: 80rem; }
+    .max-w-sm { max-width: 24rem; }
+
+    .w-8 { width: 2rem; }
+    .w-10 { width: 2.5rem; }
+    .w-12 { width: 3rem; }
+    .w-20 { width: 5rem; }
+    .h-8 { height: 2rem; }
+    .h-9 { height: 2.25rem; }
+    .h-10 { height: 2.5rem; }
+    .h-12 { height: 3rem; }
+    .h-16 { height: 4rem; }
+    .h-20 { height: 5rem; }
+
+    .w-\[800px\] { width: 800px; }
+    .w-\[600px\] { width: 600px; }
+    .w-\[500px\] { width: 500px; }
+    .w-\[400px\] { width: 400px; }
+    .w-\[300px\] { width: 300px; }
+    .h-\[500px\] { height: 500px; }
+    .h-\[600px\] { height: 600px; }
+    .h-\[400px\] { height: 400px; }
+    .h-\[300px\] { height: 300px; }
+
+    /* ===== SPACING ===== */
+    .p-2 { padding: 0.5rem; }
+    .p-4 { padding: 1rem; }
+    .p-5 { padding: 1.25rem; }
+    .p-6 { padding: 1.5rem; }
+    .p-8 { padding: 2rem; }
+
+    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .px-10 { padding-left: 2.5rem; padding-right: 2.5rem; }
+    .px-14 { padding-left: 3.5rem; padding-right: 3.5rem; }
+
+    .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+    .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-5 { margin-bottom: 1.25rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-10 { margin-bottom: 2.5rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-16 { margin-bottom: 4rem; }
+
+    .mt-1 { margin-top: 0.25rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-8 { margin-top: 2rem; }
+    .mt-10 { margin-top: 2.5rem; }
+    .mt-12 { margin-top: 3rem; }
+    .mt-auto { margin-top: auto; }
+
+    .ml-1 { margin-left: 0.25rem; }
+    .ml-2 { margin-left: 0.5rem; }
+
+    .pr-4 { padding-right: 1rem; }
+
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-5 { gap: 1.25rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .gap-10 { gap: 2.5rem; }
+
+    .-space-x-2 > * + * { margin-left: -0.5rem; }
+
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .space-y-3 > * + * { margin-top: 0.75rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+
+    /* ===== TYPOGRAPHY ===== */
+    .text-xs { font-size: 0.75rem; line-height: 1rem; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .text-5xl { font-size: 3rem; line-height: 1; }
+
+    .font-light { font-weight: 300; }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+
+    .leading-relaxed { line-height: 1.625; }
+    .leading-\[1\.05\] { line-height: 1.05; }
+
+    .tracking-tight { letter-spacing: -0.025em; }
+
+    .line-through { text-decoration: line-through; }
+
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+
+    .italic { font-style: italic; }
+
+    /* ===== COLORS ===== */
+    .text-white { color: #ffffff; }
+    .text-neutral-300 { color: #d4d4d4; }
+    .text-neutral-400 { color: #a3a3a3; }
+    .text-neutral-500 { color: #737373; }
+    .text-neutral-600 { color: #525252; }
+
+    .text-brand-400 { color: #4ade80; }
+    .text-brand-400\/70 { color: rgba(74,222,128,0.7); }
+    .text-brand-500 { color: #22c55e; }
+
+    .text-red-400 { color: #f87171; }
+    .text-yellow-400 { color: #facc15; }
+
+    /* ===== BACKGROUNDS ===== */
+    .bg-brand-500\/5 { background: rgba(34,197,94,0.05); }
+    .bg-brand-500\/10 { background: rgba(34,197,94,0.1); }
+    .bg-brand-500\/8 { background: rgba(34,197,94,0.08); }
+    .bg-brand-500 { background: #22c55e; }
+
+    .bg-red-500\/5 { background: rgba(239,68,68,0.05); }
+    .bg-red-500\/10 { background: rgba(239,68,68,0.1); }
+
+    .bg-yellow-500\/5 { background: rgba(234,179,8,0.05); }
+    .bg-yellow-500\/10 { background: rgba(234,179,8,0.1); }
+
+    .bg-dark-50 { background: #1a1a1a; }
+    .bg-dark-50\/50 { background: rgba(26,26,26,0.5); }
+    .bg-dark-100 { background: #141414; }
+    .bg-dark-500\/98 { background: rgba(8,8,8,0.98); }
+
+    .bg-white\/\[0\.01\] { background: rgba(255,255,255,0.01); }
+    .bg-white\/\[0\.02\] { background: rgba(255,255,255,0.02); }
+    .bg-white\/\[0\.03\] { background: rgba(255,255,255,0.03); }
+    .bg-white\/20 { background: rgba(255,255,255,0.2); }
+
+    /* Gradients */
+    .bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-from, transparent), var(--tw-gradient-to, transparent)); }
+    .bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-from, transparent), var(--tw-gradient-to, transparent)); }
+    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from, transparent), var(--tw-gradient-to, transparent)); }
+
+    .from-red-500\/5 { --tw-gradient-from: rgba(239,68,68,0.05); --tw-gradient-to: rgba(239,68,68,0); }
+    .from-brand-500\/5 { --tw-gradient-from: rgba(34,197,94,0.05); --tw-gradient-to: rgba(34,197,94,0); }
+    .from-brand-500 { --tw-gradient-from: #22c55e; --tw-gradient-to: rgba(34,197,94,0); }
+    .from-white\/\[0\.03\] { --tw-gradient-from: rgba(255,255,255,0.03); --tw-gradient-to: rgba(255,255,255,0); }
+
+    .to-dark-100\/50 { --tw-gradient-to: rgba(20,20,20,0.5); }
+    .to-transparent { --tw-gradient-to: transparent; }
+    .to-brand-400 { --tw-gradient-to: #4ade80; }
+
+    .via-transparent { --tw-gradient-via: transparent; }
+
+    /* ===== BORDERS ===== */
+    .border { border-width: 1px; border-style: solid; border-color: rgba(255,255,255,0.1); }
+    .border-2 { border-width: 2px; border-style: solid; border-color: rgba(255,255,255,0.1); }
+    .border-t { border-top-width: 1px; border-top-style: solid; }
+
+    .border-white\/5 { border-color: rgba(255,255,255,0.05); }
+    .border-white\/10 { border-color: rgba(255,255,255,0.1); }
+    .border-white\/20 { border-color: rgba(255,255,255,0.2); }
+
+    .border-brand-500\/10 { border-color: rgba(34,197,94,0.1); }
+    .border-brand-500\/15 { border-color: rgba(34,197,94,0.15); }
+    .border-brand-500\/20 { border-color: rgba(34,197,94,0.2); }
+
+    .border-red-500\/10 { border-color: rgba(239,68,68,0.1); }
+    .border-red-500\/20 { border-color: rgba(239,68,68,0.2); }
+    .border-red-500\/25 { border-color: rgba(239,68,68,0.25); }
+    .border-red-500\/15 { border-color: rgba(239,68,68,0.15); }
+
+    .border-yellow-500\/15 { border-color: rgba(234,179,8,0.15); }
+    .border-yellow-500\/20 { border-color: rgba(234,179,8,0.2); }
+    .border-yellow-500\/30 { border-color: rgba(234,179,8,0.3); }
+
+    .rounded-md { border-radius: 0.375rem; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-3xl { border-radius: 1.5rem; }
+    .rounded-full { border-radius: 9999px; }
+
+    /* ===== EFFECTS ===== */
+    .blur-\[80px\] { filter: blur(80px); }
+    .blur-\[100px\] { filter: blur(100px); }
+    .blur-\[120px\] { filter: blur(120px); }
+    .blur-\[150px\] { filter: blur(150px); }
+
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+
+    .opacity-40 { opacity: 0.4; }
+
+    .overflow-hidden { overflow: hidden; }
+    .overflow-x-auto { overflow-x: auto; }
+
+    .pointer-events-none { pointer-events: none; }
+
+    .flex-shrink-0 { flex-shrink: 0; }
+
+    .animate-bounce {
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+      50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+    }
+
+    /* ===== TRANSITIONS ===== */
+    .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+    .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+    .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+    .duration-300 { transition-duration: 300ms; }
+    .duration-500 { transition-duration: 500ms; }
+    .duration-1000 { transition-duration: 1000ms; }
+
+    /* ===== HOVER ===== */
+    .hover\:border-red-500\/25:hover { border-color: rgba(239,68,68,0.25); }
+    .hover\:border-yellow-500\/30:hover { border-color: rgba(234,179,8,0.3); }
+    .hover\:border-brand-400:hover { border-color: #4ade80; }
+    .hover\:text-brand-400:hover { color: #4ade80; }
+    .hover\:text-white:hover { color: #ffffff; }
+    .hover\:scale-105:hover { transform: scale(1.05); }
+
+    /* ===== GROUP HOVER ===== */
+    .group { position: relative; }
+    .group-hover\:text-brand-400:hover { color: #4ade80; }
+    .group:hover .group-hover\:text-brand-400 { color: #4ade80; }
+    .group:hover .group-hover\:scale-105 { transform: scale(1.05); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 640px) {
+      .sm\:flex-row { flex-direction: row; }
+      .sm\:hidden { display: none; }
+      .sm\:inline { display: inline; }
+      .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sm\:text-5xl { font-size: 3rem; line-height: 1; }
+      .sm\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+      .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .md\:h-20 { height: 5rem; }
+      .md\:h-10 { height: 2.5rem; }
+      .md\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+      .md\:py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+      .md\:py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+      .md\:text-5xl { font-size: 3rem; line-height: 1; }
+      .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+      .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+      .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+      .md\:text-base { font-size: 1rem; line-height: 1.5rem; }
+      .md\:text-7xl { font-size: 4.5rem; line-height: 1; }
+      .md\:text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+      .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+      .md\:px-10 { padding-left: 2.5rem; padding-right: 2.5rem; }
+      .md\:px-14 { padding-left: 3.5rem; padding-right: 3.5rem; }
+      .md\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .md\:p-6 { padding: 1.5rem; }
+      .md\:p-12 { padding: 3rem; }
+      .md\:gap-10 { gap: 2.5rem; }
+      .md\:top-24 { top: 6rem; }
+      .md\:right-6 { right: 1.5rem; }
+      .md\:flex-row { flex-direction: row; }
+      .md\:scale-105 { transform: scale(1.05); }
+      .md\:text-right { text-align: right; }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .lg\:col-span-2 { grid-column: span 2 / span 2; }
+      .lg\:col-span-3 { grid-column: span 3 / span 3; }
+      .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+    }
+
+    /* ===== CUSTOM ANIMATIONS ===== */
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(34,197,94,0.2); }
+      50% { box-shadow: 0 0 40px rgba(34,197,94,0.4), 0 0 80px rgba(34,197,94,0.1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== REVEAL CLASSES ===== */
+    .reveal { animation: reveal 0.8s cubic-bezier(0.2,0.8,0.2,1) both; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    .delay-700 { animation-delay: 0.7s; }
+
+    /* ===== ANIMATION UTILITIES ===== */
+    .float-animation { animation: float 6s ease-in-out infinite; }
+    .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+    .shimmer-text {
+      background: linear-gradient(90deg, #4ade80, #fff, #4ade80);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* ===== BORDER & GLOW EFFECTS ===== */
+    .green-border-glow {
+      border: 1px solid rgba(34,197,94,0.3);
+      box-shadow: inset 0 0 15px rgba(34,197,94,0.05), 0 0 20px rgba(34,197,94,0.1);
+    }
+    .green-glow-strong {
+      box-shadow: 0 0 40px rgba(34,197,94,0.3), 0 0 80px rgba(34,197,94,0.1);
+    }
+
+    /* ===== BACKGROUND EFFECTS ===== */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(34,197,94,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,197,94,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .noise-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.15;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ===== SECTION REVEAL ===== */
+    .section-hidden {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s cubic-bezier(0.2,0.8,0.2,1), transform 0.8s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .section-hidden.reveal-wait {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .cta-btn {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    .cta-btn:hover::before { left: 100%; }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(34,197,94,0.4);
+    }
+
+    /* ===== FEATURE CARD ===== */
+    .feature-card {
+      background: linear-gradient(135deg, rgba(34,197,94,0.05), rgba(10,10,10,0.8));
+      border: 1px solid rgba(34,197,94,0.1);
+      transition: all 0.4s ease;
+    }
+    .feature-card:hover {
+      border-color: rgba(34,197,94,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(34,197,94,0.1);
+    }
+
+    /* ===== PRICING HIGHLIGHT ===== */
+    .pricing-highlight {
+      background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(10,10,10,0.9));
+      border: 2px solid rgba(34,197,94,0.4);
+      position: relative;
+    }
+    .pricing-highlight::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px; bottom: -1px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.3), transparent, rgba(34,197,94,0.1));
+      border-radius: inherit;
+      z-index: -1;
+      filter: blur(1px);
+    }
+
+    /* ===== TESTIMONIAL CARD ===== */
+    .testimonial-card {
+      background: linear-gradient(135deg, rgba(34,197,94,0.03), rgba(20,20,20,0.9));
+      border: 1px solid rgba(34,197,94,0.1);
+      transition: all 0.4s ease;
+    }
+    .testimonial-card:hover {
+      border-color: rgba(34,197,94,0.25);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FAQ ===== */
+    .faq-item {
+      border: 1px solid rgba(34,197,94,0.1);
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover { border-color: rgba(34,197,94,0.25); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-answer.open { max-height: 300px; }
+
+    /* ===== STEP CONNECTOR ===== */
+    .step-connector { position: relative; }
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 56px;
+      bottom: -8px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(34,197,94,0.4), rgba(34,197,94,0.05));
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open { transform: translateX(0); }
+
+    /* ===== TOAST ===== */
+    .toast {
+      transform: translateY(-30px);
+      opacity: 0;
+      transition: all 0.4s ease;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ===== PARTICLES CANVAS ===== */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== SCREENSHOT TABS & PANELS ===== */
+    .screenshot-tab { cursor: pointer; transition: all 0.3s ease; }
+    .screenshot-tab.active {
+      border-color: rgba(34,197,94,0.6) !important;
+      background: rgba(34,197,94,0.1) !important;
+    }
+    .screenshot-panel {
+      display: none;
+      animation: reveal 0.5s ease both;
+    }
+    .screenshot-panel.active { display: block; }
+
+    .screenshot-frame {
+      border: 1px solid rgba(34,197,94,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(34,197,94,0.08), 0 20px 60px rgba(0,0,0,0.4);
+      transition: all 0.4s ease;
+    }
+    .screenshot-frame:hover {
+      box-shadow: 0 0 40px rgba(34,197,94,0.15), 0 25px 70px rgba(0,0,0,0.5);
+      transform: translateY(-4px);
+    }
+
+    /* ===== SPECIAL COMPOUND STYLES ===== */
+    /* For elements that use bg-gradient-to-br with from- and to- together */
+    .from-red-500\/5.to-dark-100\/50 { background-image: linear-gradient(to bottom right, rgba(239,68,68,0.05), rgba(20,20,20,0.5)); }
+    .from-brand-500\/5.to-dark-100\/50 { background-image: linear-gradient(to bottom right, rgba(34,197,94,0.05), rgba(20,20,20,0.5)); }
+    .from-yellow-500\/5.to-dark-100\/50 { background-image: linear-gradient(to bottom right, rgba(234,179,8,0.05), rgba(20,20,20,0.5)); }
+    .from-white\/\[0\.03\].to-dark-100\/50 { background-image: linear-gradient(to bottom right, rgba(255,255,255,0.03), rgba(20,20,20,0.5)); }
+    .from-brand-500.via-transparent.to-transparent { background-image: linear-gradient(to bottom, #22c55e, transparent, transparent); }
+    .from-brand-500.to-brand-400 { background-image: linear-gradient(to right, #22c55e, #4ade80); }
+  </style>
+</head>
+<body>
+
+<div class="relative">
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background:rgba(5,5,5,0.8);backdrop-filter:blur(12px)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="flex items-center gap-3 group">
+          <img src="https://z-cdn-media.chatglm.cn/files/e34bdd10-ef14-46d6-890c-cb0131309c01.png?auth_key=1878468658-296b2fa3b94346ed9fdf8fadb8e7986c-0-7d4a9c1e5b8af71b1fe91da6f1f55a07" alt="PriceCraft Logo" class="h-9 md:h-10 w-auto rounded-lg transition-transform duration-300 group-hover:scale-105" />
+          <span class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Price<span class="text-brand-400">Craft</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#masalah" class="text-sm font-medium text-neutral-400 hover:text-brand-400 transition-colors">Masalah</a>
+          <a href="#fitur" class="text-sm font-medium text-neutral-400 hover:text-brand-400 transition-colors">Fitur</a>
+          <a href="#harga" class="text-sm font-medium text-neutral-400 hover:text-brand-400 transition-colors">Harga</a>
+          <a href="#testimoni" class="text-sm font-medium text-neutral-400 hover:text-brand-400 transition-colors">Testimoni</a>
+          <a href="#faq" class="text-sm font-medium text-neutral-400 hover:text-brand-400 transition-colors">FAQ</a>
+          <a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" class="cta-btn px-5 py-2.5 rounded-full text-sm font-semibold text-white">Beli Sekarang</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2"><span class="iconify text-2xl" data-icon="mdi:menu"></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 bg-dark-500/98" style="backdrop-filter:blur(20px)">
+    <div class="flex flex-col h-full p-6">
+      <div class="flex justify-between items-center mb-12">
+        <div class="flex items-center gap-3">
+          <img src="https://z-cdn-media.chatglm.cn/files/e34bdd10-ef14-46d6-890c-cb0131309c01.png?auth_key=1878468658-296b2fa3b94346ed9fdf8fadb8e7986c-0-7d4a9c1e5b8af71b1fe91da6f1f55a07" alt="PriceCraft Logo" class="h-9 w-auto rounded-lg" />
+          <span class="text-xl font-bold text-white">Price<span class="text-brand-400">Craft</span></span>
+        </div>
+        <button id="mobile-menu-close" class="text-white p-2"><span class="iconify text-2xl" data-icon="mdi:close"></span></button>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a href="#masalah" class="mobile-link text-2xl font-medium text-neutral-300 hover:text-brand-400 transition-colors">Masalah</a>
+        <a href="#fitur" class="mobile-link text-2xl font-medium text-neutral-300 hover:text-brand-400 transition-colors">Fitur</a>
+        <a href="#harga" class="mobile-link text-2xl font-medium text-neutral-300 hover:text-brand-400 transition-colors">Harga</a>
+        <a href="#testimoni" class="mobile-link text-2xl font-medium text-neutral-300 hover:text-brand-400 transition-colors">Testimoni</a>
+        <a href="#faq" class="mobile-link text-2xl font-medium text-neutral-300 hover:text-brand-400 transition-colors">FAQ</a>
+      </div>
+      <div class="mt-auto">
+        <a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" class="mobile-link cta-btn block text-center px-8 py-4 rounded-full text-lg font-semibold text-white">Beli Sekarang — Rp 97.000</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay grid-bg" style="padding-top:5rem">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] -z-10"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-400/5 rounded-full blur-[100px] -z-10"></div>
+    <div class="absolute top-1/3 right-0 w-[300px] h-[300px] bg-brand-600/5 rounded-full blur-[80px] -z-10" style="background:rgba(22,163,74,0.05)"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20 md:py-32">
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-8">
+        <span class="text-lg">&#9889;</span>
+        <span class="text-sm font-medium text-brand-400">Solusi #1 untuk Seller Online Indonesia</span>
+      </div>
+      <h1 class="reveal delay-100 text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+        <span class="text-white">Stop Menebak</span><br /><span class="shimmer-text">Harga Jual!</span>
+      </h1>
+      <h2 class="reveal delay-200 text-xl sm:text-2xl md:text-3xl font-light text-neutral-300 mb-4 tracking-tight">Kalkulator Otomatis <span class="text-brand-400 font-medium">4 Marketplace</span></h2>
+      <p class="reveal delay-300 text-lg md:text-xl text-brand-400 font-medium mb-8">Bayar Sekali, Pakai Selamanya.</p>
+      <p class="reveal delay-400 text-base md:text-lg font-light text-neutral-400 max-w-3xl mx-auto mb-10 leading-relaxed">Cukup masukkan harga modal, dalam <span class="text-brand-400 font-medium">3 detik</span> kamu langsung tahu harga jual paling ideal di Shopee, Tokopedia, TikTok Shop &amp; Lazada. Tanpa ribet. Tanpa hitung manual. Tanpa bayar bulanan.</p>
+      <div class="reveal delay-500 mb-8">
+        <a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" class="cta-btn pulse-glow inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold text-white">
+          <span>Beli Sekarang — Rp 97.000</span>
+          <span class="text-sm font-medium bg-white/20 px-3 py-1 rounded-full">Lifetime</span>
+        </a>
+      </div>
+      <div class="reveal delay-600 flex items-center justify-center gap-3">
+        <div class="flex -space-x-2">
+          <img src="https://picsum.photos/seed/seller1/40/40.jpg" class="w-8 h-8 rounded-full border-2" style="border-color:#080808" alt="" />
+          <img src="https://picsum.photos/seed/seller2/40/40.jpg" class="w-8 h-8 rounded-full border-2" style="border-color:#080808" alt="" />
+          <img src="https://picsum.photos/seed/seller3/40/40.jpg" class="w-8 h-8 rounded-full border-2" style="border-color:#080808" alt="" />
+          <img src="https://picsum.photos/seed/seller4/40/40.jpg" class="w-8 h-8 rounded-full border-2" style="border-color:#080808" alt="" />
+        </div>
+        <span class="text-yellow-400 text-sm">&#11088;&#11088;&#11088;&#11088;&#11088;</span>
+        <span class="text-sm text-neutral-400">Sudah dipakai <span class="text-brand-400 font-semibold">500+</span> seller Indonesia</span>
+      </div>
+      <div class="reveal delay-700 mt-12 flex items-center justify-center gap-6 md:gap-10 flex-wrap opacity-40">
+        <div class="flex items-center gap-2 text-neutral-500"><span class="iconify text-2xl" data-icon="mdi:shopping"></span><span class="text-sm font-medium">Shopee</span></div>
+        <div class="flex items-center gap-2 text-neutral-500"><span class="iconify text-2xl" data-icon="mdi:store"></span><span class="text-sm font-medium">Tokopedia</span></div>
+        <div class="flex items-center gap-2 text-neutral-500"><span class="iconify text-2xl" data-icon="mdi:music-note"></span><span class="text-sm font-medium">TikTok Shop</span></div>
+        <div class="flex items-center gap-2 text-neutral-500"><span class="iconify text-2xl" data-icon="mdi:flash"></span><span class="text-sm font-medium">Lazada</span></div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce"><span class="text-xs text-neutral-500">Scroll</span><span class="iconify text-brand-400 text-xl" data-icon="mdi:chevron-down"></span></div>
+  </section>
+
+  <!-- ===== PAIN POINTS ===== -->
+  <section id="masalah" class="relative py-20 md:py-32 overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] -z-10"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-500/20 bg-red-500/5 mb-6"><span class="text-lg">&#9888;&#65039;</span><span class="text-sm font-medium text-red-400">Apakah Kamu Mengalami Ini?</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Masalah yang</span> <span class="text-red-400">Bikin Pusing</span></h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 mb-12">
+        <div class="p-6 rounded-2xl from-red-500/5 to-dark-100/50 border border-red-500/10 hover:border-red-500/25 transition-all duration-300" style="background:linear-gradient(to bottom right,rgba(239,68,68,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:help-circle-outline"></span></div><div><h3 class="text-lg font-semibold text-white mb-2">"Bingung menentukan harga jual"</h3><p class="text-neutral-400 text-sm leading-relaxed">Takut terlalu mahal, pembeli kabur. Takut terlalu murah, malah rugi.</p></div></div></div>
+        <div class="p-6 rounded-2xl from-red-500/5 to-dark-100/50 border border-red-500/10 hover:border-red-500/25 transition-all duration-300" style="background:linear-gradient(to bottom right,rgba(239,68,68,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:calculator"></span></div><div><h3 class="text-lg font-semibold text-white mb-2">"Hitung manual pakai kalkulator"</h3><p class="text-neutral-400 text-sm leading-relaxed">Fee Shopee beda, TikTok beda, Tokopedia beda... capek!</p></div></div></div>
+        <div class="p-6 rounded-2xl from-red-500/5 to-dark-100/50 border border-red-500/10 hover:border-red-500/25 transition-all duration-300" style="background:linear-gradient(to bottom right,rgba(239,68,68,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:chart-line-variant"></span></div><div><h3 class="text-lg font-semibold text-white mb-2">"Sudah jualan tapi tidak pernah untung"</h3><p class="text-neutral-400 text-sm leading-relaxed">Taunya rugi setelah barang dikirim.</p></div></div></div>
+        <div class="p-6 rounded-2xl from-red-500/5 to-dark-100/50 border border-red-500/10 hover:border-red-500/25 transition-all duration-300" style="background:linear-gradient(to bottom right,rgba(239,68,68,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:account-group-outline"></span></div><div><h3 class="text-lg font-semibold text-white mb-2">"Kompetitor harga selalu lebih murah"</h3><p class="text-neutral-400 text-sm leading-relaxed">Padahal kamu sudah tekor pakai banyak promo.</p></div></div></div>
+      </div>
+      <div class="p-6 rounded-2xl border border-red-500/10 hover:border-red-500/25 transition-all duration-300 mb-12" style="background:linear-gradient(to bottom right,rgba(239,68,68,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:credit-card-clock-outline"></span></div><div><h3 class="text-lg font-semibold text-white mb-2">"Bayar tools bulanan terus-menerus"</h3><p class="text-neutral-400 text-sm leading-relaxed">Belum untung, sudah potong biaya langganan.</p></div></div></div>
+      <div class="text-center"><p class="text-lg md:text-xl text-neutral-300 font-light">Kalau salah satu di atas adalah masalahmu, <span class="text-brand-400 font-medium">kamu sedang di tempat yang tepat.</span></p></div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTION ===== -->
+  <section class="relative py-20 md:py-32 overflow-hidden noise-overlay">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/8 rounded-full blur-[120px] -z-10"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#9989;</span><span class="text-sm font-medium text-brand-400">Solusi Udah Ada!</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6"><span class="text-white">Kenalkan</span> <span class="text-brand-400">PriceCraft</span></h2>
+        <p class="text-xl md:text-2xl text-neutral-300 font-light max-w-3xl mx-auto mb-4">Kalkulator Harga Jual <span class="text-brand-400 font-medium">#1 Indonesia</span></p>
+        <p class="text-base md:text-lg text-neutral-400 font-light max-w-3xl mx-auto leading-relaxed">PriceCraft adalah tools kalkulator harga jual online yang dirancang khusus untuk seller Indonesia. Dengan satu kali input harga modal, kamu langsung mendapatkan rekomendasi harga jual terbaik untuk <span class="text-brand-400 font-medium">4 marketplace sekaligus</span>.</p>
+      </div>
+      <div class="max-w-2xl mx-auto p-8 rounded-2xl green-border-glow" style="background:linear-gradient(to bottom right,rgba(34,197,94,0.05),rgba(20,20,20,0.5))">
+        <p class="text-center text-neutral-300 text-lg mb-6 font-medium">Cara Kerjanya:</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+          <div class="flex items-center gap-2 bg-brand-500/10 px-4 py-3 rounded-xl"><span class="iconify text-brand-400 text-xl" data-icon="mdi:keyboard-outline"></span><span class="text-white font-medium">Masukkan Harga Modal</span></div>
+          <span class="iconify text-brand-400 text-2xl hidden sm:block" data-icon="mdi:arrow-right"></span>
+          <span class="iconify text-brand-400 text-2xl sm:hidden" data-icon="mdi:arrow-down"></span>
+          <div class="flex items-center gap-2 bg-brand-500/10 px-4 py-3 rounded-xl"><span class="iconify text-brand-400 text-xl" data-icon="mdi:cursor-default-click-outline"></span><span class="text-white font-medium">Klik Hitung</span></div>
+          <span class="iconify text-brand-400 text-2xl hidden sm:block" data-icon="mdi:arrow-right"></span>
+          <span class="iconify text-brand-400 text-2xl sm:hidden" data-icon="mdi:arrow-down"></span>
+          <div class="flex items-center gap-2 bg-brand-500/10 px-4 py-3 rounded-xl"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle-outline"></span><span class="text-white font-medium">Dapat Harga Jual!</span></div>
+        </div>
+        <p class="text-center text-neutral-500 text-sm mt-6">Tidak perlu keahlian matematika. Tidak perlu Excel. Semudah itu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEMO SCREENSHOT ===== -->
+  <section class="relative py-20 md:py-32 overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[120px] -z-10"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#128248;</span><span class="text-sm font-medium text-brand-400">Lihat Aksinya</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Bagaimana</span> <span class="text-brand-400">PriceCraft</span> <span class="text-white">Bekerja</span></h2>
+        <p class="text-neutral-400 text-lg font-light mt-4">Klik tab di bawah untuk melihat setiap fitur secara langsung</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button onclick="switchTab('hpp')" data-tab="hpp" class="screenshot-tab active flex items-center gap-2 px-5 py-3 rounded-xl border border-brand-500/20 bg-brand-500/5 text-sm font-medium text-brand-400 transition-all"><span class="iconify text-lg" data-icon="mdi:package-variant-closed"></span><span class="hidden sm:inline">Input Bahan &amp; HPP</span><span class="sm:hidden">HPP</span></button>
+        <button onclick="switchTab('input')" data-tab="input" class="screenshot-tab flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-white/[0.02] text-sm font-medium text-neutral-400 transition-all"><span class="iconify text-lg" data-icon="mdi:form-textbox"></span><span class="hidden sm:inline">Hitung Harga Jual</span><span class="sm:hidden">Hitung</span></button>
+        <button onclick="switchTab('hasil')" data-tab="hasil" class="screenshot-tab flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-white/[0.02] text-sm font-medium text-neutral-400 transition-all"><span class="iconify text-lg" data-icon="mdi:chart-bar"></span><span class="hidden sm:inline">Hasil Perhitungan</span><span class="sm:hidden">Hasil</span></button>
+        <button onclick="switchTab('bep')" data-tab="bep" class="screenshot-tab flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-white/[0.02] text-sm font-medium text-neutral-400 transition-all"><span class="iconify text-lg" data-icon="mdi:target"></span><span class="hidden sm:inline">Break-Even (BEP)</span><span class="sm:hidden">BEP</span></button>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <!-- Tab HPP -->
+        <div id="tab-hpp" class="screenshot-panel active"><div class="grid lg:grid-cols-5 gap-8 items-center"><div class="lg:col-span-2 space-y-4"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-semibold">STEP 1</div><h3 class="text-2xl font-bold text-white">Input Bahan Baku &amp; Hitung HPP</h3><p class="text-neutral-400 text-sm leading-relaxed">Masukkan semua biaya — bahan baku, tenaga kerja, kemasan — dan PriceCraft langsung menghitung Harga Pokok Produksi per produk secara otomatis.</p><ul class="space-y-2"><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Input bahan baku &amp; subtotal</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Biaya tenaga kerja</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Biaya kemasan (plastik, polybag)</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> HPP otomatis terhitung</li></ul></div><div class="lg:col-span-3"><div class="screenshot-frame"><img src="https://z-cdn-media.chatglm.cn/files/ad004778-e38d-441d-8481-6638f7264c01.png?auth_key=1878471498-8519476fa0ab41be8725c814ba77dfdc-0-4dce07efdd6f45ac9ecc80bbc209af9c" alt="Screenshot HPP Calculator" class="w-full h-auto block" /></div></div></div></div>
+        <!-- Tab Input -->
+        <div id="tab-input" class="screenshot-panel"><div class="grid lg:grid-cols-5 gap-8 items-center"><div class="lg:col-span-2 space-y-4"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-semibold">STEP 2</div><h3 class="text-2xl font-bold text-white">Masukkan Data &amp; Hitung Harga Jual</h3><p class="text-neutral-400 text-sm leading-relaxed">Input nama produk, total modal, target keuntungan, dan persentase fee marketplace. Klik hitung — dalam 3 detik harga jual langsung muncul!</p><ul class="space-y-2"><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Nama produk &amp; total modal</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Target profit yang diinginkan</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Fee Shopee, Tokopedia, TikTok, Lazada</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Hasil instan "Berhasil Dihitung!"</li></ul></div><div class="lg:col-span-3"><div class="screenshot-frame"><img src="https://z-cdn-media.chatglm.cn/files/092e0fbc-0f4e-4c33-90f4-da60ed6b5d37.png?auth_key=1878471498-5ca7484c947a4a7d947b7bd5dd8dc29d-0-98ba1ac0acb9d0ef4c8e7ace68c549ec" alt="Screenshot Input Harga Jual" class="w-full h-auto block" /></div></div></div></div>
+        <!-- Tab Hasil -->
+        <div id="tab-hasil" class="screenshot-panel"><div class="grid lg:grid-cols-5 gap-8 items-center"><div class="lg:col-span-2 space-y-4"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-semibold">STEP 3</div><h3 class="text-2xl font-bold text-white">Hasil Perbandingan 4 Marketplace</h3><p class="text-neutral-400 text-sm leading-relaxed">Lihat harga jual sekaligus di 4 marketplace beserta profit &amp; margin. PriceCraft bahkan merekomendasikan marketplace terbaik untuk produkmu!</p><ul class="space-y-2"><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Harga jual per marketplace</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Profit &amp; margin keuntungan</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Rekomendasi marketplace terbaik</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Visualisasi bar chart</li></ul></div><div class="lg:col-span-3"><div class="screenshot-frame"><img src="https://z-cdn-media.chatglm.cn/files/188b2318-7142-4421-8dda-c0f2c028f046.png?auth_key=1878471498-3566dc0c251e42e2a4f3f762d22da2ee-0-620df551d5a8b29ed969f30db315071e" alt="Screenshot Hasil Perhitungan" class="w-full h-auto block" /></div></div></div></div>
+        <!-- Tab BEP -->
+        <div id="tab-bep" class="screenshot-panel"><div class="grid lg:grid-cols-5 gap-8 items-center"><div class="lg:col-span-2 space-y-4"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-semibold">STEP 4</div><h3 class="text-2xl font-bold text-white">Fee Auto-Update &amp; Break-Even Point</h3><p class="text-neutral-400 text-sm leading-relaxed">Fee marketplace selalu up-to-date secara otomatis. Hitung BEP untuk tahu berapa unit harus terjual agar balik modal — rencana bisnis jadi terukur!</p><ul class="space-y-2"><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Fee marketplace auto-update</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Per kategori (Fashion, dll)</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Kalkulator BEP terintegrasi</li><li class="flex items-center gap-2 text-sm text-neutral-300"><span class="iconify text-brand-400" data-icon="mdi:check-circle"></span> Ketahui unit balik modal</li></ul></div><div class="lg:col-span-3"><div class="screenshot-frame"><img src="https://z-cdn-media.chatglm.cn/files/f89f9554-c022-48cf-b117-b4c70f6c3772.png?auth_key=1878471498-e6ff0a4419e749a38ac4c87203680d5b-0-ff8e6e70b5e1853d7b7f3e9fbcfad5e6" alt="Screenshot BEP &amp; Fee" class="w-full h-auto block" /></div></div></div></div>
+      </div>
+      <p class="text-center text-neutral-400 text-lg mt-12 font-light italic">Semudah itu. <span class="text-brand-400 font-medium">Secepat itu.</span> Senyaman itu.</p>
+    </div>
+  </section>
+
+  <!-- ===== COMPARISON TABLE ===== -->
+  <section class="relative py-20 md:py-32 overflow-hidden noise-overlay grid-bg">
+    <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-500/5 rounded-full blur-[100px] -z-10"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#129300;</span><span class="text-sm font-medium text-brand-400">Perbandingan</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Kenapa Harus</span> <span class="text-brand-400">PriceCraft?</span></h2>
+      </div>
+      <div class="overflow-x-auto rounded-2xl border border-brand-500/15">
+        <table class="w-full text-sm">
+          <thead><tr style="background:rgba(34,197,94,0.1)"><th class="text-left p-4 text-neutral-300 font-medium">Fitur</th><th class="p-4 text-center"><span class="text-brand-400 font-bold text-base">PriceCraft</span></th><th class="p-4 text-center text-neutral-400 font-medium">Tools Lain</th><th class="p-4 text-center text-neutral-400 font-medium">Manual</th></tr></thead>
+          <tbody>
+            <tr class="border-t border-white/5"><td class="p-4 text-neutral-300 font-medium">Harga</td><td class="p-4 text-center text-brand-400 font-semibold">Rp 97rb sekali</td><td class="p-4 text-center text-red-400">Rp 99-149rb/bln</td><td class="p-4 text-center text-neutral-500">Gratis</td></tr>
+            <tr class="border-t border-white/5 bg-white/[0.01]"><td class="p-4 text-neutral-300 font-medium">Marketplace</td><td class="p-4 text-center"><span class="text-brand-400 font-semibold">4 sekaligus</span></td><td class="p-4 text-center text-neutral-400">1-2 saja</td><td class="p-4 text-center text-neutral-500">Ribet</td></tr>
+            <tr class="border-t border-white/5"><td class="p-4 text-neutral-300 font-medium">Kalkulator HPP</td><td class="p-4 text-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle"></span></td><td class="p-4 text-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:close-circle"></span></td><td class="p-4 text-center text-neutral-500">Manual</td></tr>
+            <tr class="border-t border-white/5 bg-white/[0.01]"><td class="p-4 text-neutral-300 font-medium">Kalkulator BEP</td><td class="p-4 text-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle"></span></td><td class="p-4 text-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:close-circle"></span></td><td class="p-4 text-center text-neutral-500">Manual</td></tr>
+            <tr class="border-t border-white/5"><td class="p-4 text-neutral-300 font-medium">Cloud Sync</td><td class="p-4 text-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle"></span></td><td class="p-4 text-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:close-circle"></span></td><td class="p-4 text-center text-neutral-500">&mdash;</td></tr>
+            <tr class="border-t border-white/5 bg-white/[0.01]"><td class="p-4 text-neutral-300 font-medium">Export Excel/PDF</td><td class="p-4 text-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle"></span></td><td class="p-4 text-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:close-circle"></span></td><td class="p-4 text-center text-neutral-500">Manual</td></tr>
+            <tr class="border-t border-white/5"><td class="p-4 text-neutral-300 font-medium">Update Fee Otomatis</td><td class="p-4 text-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle"></span></td><td class="p-4 text-center"><span class="iconify text-red-400 text-xl" data-icon="mdi:close-circle"></span></td><td class="p-4 text-center text-neutral-500">&mdash;</td></tr>
+            <tr class="border-t border-white/5 bg-white/[0.01]"><td class="p-4 text-neutral-300 font-medium">Desain Modern</td><td class="p-4 text-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:check-circle"></span></td><td class="p-4 text-center text-yellow-400 text-sm">Kadang berat</td><td class="p-4 text-center text-neutral-500">&mdash;</td></tr>
+            <tr class="border-t border-white/5"><td class="p-4 text-neutral-300 font-medium">Bayar Lagi?</td><td class="p-4 text-center"><span class="text-brand-400 font-bold text-lg">Tidak!</span></td><td class="p-4 text-center"><span class="text-red-400 text-xl">&#128552; Setiap bulan</span></td><td class="p-4 text-center text-neutral-500">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center mt-10"><p class="text-lg text-neutral-300">Satu kali bayar <span class="text-brand-400 font-bold">Rp 97.000</span>, kamu pakai selamanya. <span class="text-neutral-500">Tidak ada biaya tersembunyi. Tidak ada biaya bulanan. Tidak ada biaya tahunan.</span></p></div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section id="fitur" class="relative py-20 md:py-32 overflow-hidden">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-500/5 rounded-full blur-[120px] -z-10"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#128296;&#65039;</span><span class="text-sm font-medium text-brand-400">Fitur Lengkap</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Semua yang Kamu</span> <span class="text-brand-400">Butuhkan</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="feature-card p-6 rounded-2xl"><div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4"><span class="iconify text-brand-400 text-2xl" data-icon="mdi:calculator-variant"></span></div><h3 class="text-lg font-semibold text-white mb-2">Kalkulator HPP</h3><p class="text-neutral-400 text-sm leading-relaxed">Hitung Harga Pokok Produksi per produk secara otomatis — termasuk bahan baku, tenaga kerja, dan kemasan.</p></div>
+        <div class="feature-card p-6 rounded-2xl"><div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4"><span class="iconify text-brand-400 text-2xl" data-icon="mdi:target"></span></div><h3 class="text-lg font-semibold text-white mb-2">Kalkulator BEP</h3><p class="text-neutral-400 text-sm leading-relaxed">Ketahui Break-Even Point — berapa unit harus terjual sebelum kamu mulai untung.</p></div>
+        <div class="feature-card p-6 rounded-2xl"><div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4"><span class="iconify text-brand-400 text-2xl" data-icon="mdi:shopping"></span></div><h3 class="text-lg font-semibold text-white mb-2">4 Marketplace Sekaligus</h3><p class="text-neutral-400 text-sm leading-relaxed">Shopee, Tokopedia, TikTok Shop, dan Lazada — hitung harga jual di semua platform dalam satu klik.</p></div>
+        <div class="feature-card p-6 rounded-2xl"><div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4"><span class="iconify text-brand-400 text-2xl" data-icon="mdi:cloud-sync-outline"></span></div><h3 class="text-lg font-semibold text-white mb-2">Cloud Sync</h3><p class="text-neutral-400 text-sm leading-relaxed">Data tersimpan di cloud. Akses dari HP, laptop, atau tablet — kapan saja, di mana saja.</p></div>
+        <div class="feature-card p-6 rounded-2xl"><div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4"><span class="iconify text-brand-400 text-2xl" data-icon="mdi:file-export-outline"></span></div><h3 class="text-lg font-semibold text-white mb-2">Export Excel &amp; PDF</h3><p class="text-neutral-400 text-sm leading-relaxed">Export hasil perhitungan ke Excel atau PDF untuk analisis lebih lanjut atau dokumentasi bisnis.</p></div>
+        <div class="feature-card p-6 rounded-2xl"><div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4"><span class="iconify text-brand-400 text-2xl" data-icon="mdi:update"></span></div><h3 class="text-lg font-semibold text-white mb-2">Update Fee Otomatis</h3><p class="text-neutral-400 text-sm leading-relaxed">Fee marketplace selalu up-to-date. Tidak perlu cek manual atau update sendiri.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BONUS ===== -->
+  <section class="relative py-20 md:py-32 overflow-hidden noise-overlay">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[100px] -z-10"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/5 mb-6"><span class="text-lg">&#127873;</span><span class="text-sm font-medium text-yellow-400">Bonus Eksklusif</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Bonus Spesial untuk</span> <span class="text-yellow-400">Kamu!</span></h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="p-6 rounded-2xl border border-yellow-500/15 hover:border-yellow-500/30 transition-all duration-300" style="background:linear-gradient(to bottom right,rgba(234,179,8,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center"><span class="iconify text-yellow-400 text-2xl" data-icon="mdi:book-open-variant"></span></div><div><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-yellow-500/10 text-yellow-400 text-xs font-semibold mb-2">GRATIS</div><h3 class="text-lg font-semibold text-white mb-2">Panduan Lengkap Cara Jualan di Marketplace (Shopee) untuk Pemula</h3><p class="text-neutral-400 text-sm leading-relaxed">Ebook 50+ halaman yang membimbing kamu dari nol sampai bisa jualan profesional di Shopee.</p><p class="text-yellow-400 text-sm font-semibold mt-3">Nilai: Rp 79.000</p></div></div></div>
+        <div class="p-6 rounded-2xl border border-yellow-500/15 hover:border-yellow-500/30 transition-all duration-300" style="background:linear-gradient(to bottom right,rgba(234,179,8,0.05),rgba(20,20,20,0.5))"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center"><span class="iconify text-yellow-400 text-2xl" data-icon="mdi:rocket-launch-outline"></span></div><div><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-yellow-500/10 text-yellow-400 text-xs font-semibold mb-2">GRATIS</div><h3 class="text-lg font-semibold text-white mb-2">Panduan 30 Hari Sukses Jualan di Marketplace</h3><p class="text-neutral-400 text-sm leading-relaxed">Strategi harian selama 30 hari untuk meningkatkan penjualan marketplace kamu secara konsisten.</p><p class="text-yellow-400 text-sm font-semibold mt-3">Nilai: Rp 79.000</p></div></div></div>
+      </div>
+      <div class="text-center mt-8"><p class="text-lg text-neutral-300">Total bonus: <span class="text-yellow-400 font-bold">Rp 158.000</span> — kamu dapat <span class="text-yellow-400 font-semibold">GRATIS!</span></p></div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="harga" class="relative py-20 md:py-32 overflow-hidden grid-bg">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[120px] -z-10"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-500/8 rounded-full blur-[100px] -z-10"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#128176;</span><span class="text-sm font-medium text-brand-400">Harga Spesial</span></div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Investasi Sekali,</span> <span class="text-brand-400">Profit Selamanya</span></h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <!-- Paket A -->
+        <div class="p-6 rounded-2xl border border-white/10" style="background:linear-gradient(to bottom right,rgba(255,255,255,0.03),rgba(20,20,20,0.5))">
+          <h3 class="text-lg font-semibold text-neutral-300 mb-2">Paket A — HPP Only</h3><p class="text-sm text-neutral-500 mb-4">Basic</p>
+          <div class="mb-2"><span class="text-neutral-500 line-through text-lg">Rp 49.000</span></div>
+          <div class="mb-6"><span class="text-4xl font-bold text-white">Rp 39<span class="text-2xl">.000</span></span></div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Kalkulator HPP</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>1 marketplace</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-500"><span class="iconify text-neutral-600 text-lg flex-shrink-0" data-icon="mdi:close-circle"></span>Kalkulator BEP</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-500"><span class="iconify text-neutral-600 text-lg flex-shrink-0" data-icon="mdi:close-circle"></span>Cloud sync</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-500"><span class="iconify text-neutral-600 text-lg flex-shrink-0" data-icon="mdi:close-circle"></span>Export</li>
+          </ul>
+          <a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" target="_blank" rel="noopener noreferrer" class="block text-center px-6 py-3 rounded-full border border-white/20 text-white text-sm font-semibold hover:border-brand-400 transition-all">Pilih Paket</a>
+        </div>
+        <!-- Paket B -->
+        <div class="p-6 rounded-2xl border border-white/10" style="background:linear-gradient(to bottom right,rgba(255,255,255,0.03),rgba(20,20,20,0.5))">
+          <h3 class="text-lg font-semibold text-neutral-300 mb-2">Paket B — HPP + BEP</h3><p class="text-sm text-neutral-500 mb-4">Standard</p>
+          <div class="mb-2"><span class="text-neutral-500 line-through text-lg">Rp 79.000</span></div>
+          <div class="mb-6"><span class="text-4xl font-bold text-white">Rp 67<span class="text-2xl">.000</span></span></div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Kalkulator HPP + BEP</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>2 marketplace</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Cloud sync</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-500"><span class="iconify text-neutral-600 text-lg flex-shrink-0" data-icon="mdi:close-circle"></span>Export</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-500"><span class="iconify text-neutral-600 text-lg flex-shrink-0" data-icon="mdi:close-circle"></span>Bonus ebook</li>
+          </ul>
+          <a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" target="_blank" rel="noopener noreferrer" class="block text-center px-6 py-3 rounded-full border border-white/20 text-white text-sm font-semibold hover:border-brand-400 transition-all">Pilih Paket</a>
+        </div>
+        <!-- Paket C — BEST VALUE -->
+        <div class="pricing-highlight p-6 rounded-2xl scale-[1.02] md:scale-105">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2"><span class="px-4 py-1 rounded-full bg-brand-500 text-white text-xs font-bold">BEST VALUE</span></div>
+          <h3 class="text-lg font-semibold text-brand-400 mb-2">Paket C — PriceCraft</h3><p class="text-sm mb-4" style="color:rgba(74,222,128,0.7)">Lifetime Access</p>
+          <div class="mb-2"><span class="text-neutral-500 line-through text-lg">Rp 149.000</span></div>
+          <div class="mb-6"><span class="text-5xl font-bold text-white">Rp 97<span class="text-3xl">.000</span></span><span class="text-brand-400 font-medium text-sm ml-1">sekali bayar</span></div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Bayar sekali, selamanya</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>4 marketplace sekaligus</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Kalkulator HPP + BEP</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Cloud sync</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Export Excel/PDF</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-brand-400 text-lg flex-shrink-0" data-icon="mdi:check-circle"></span>Update fee otomatis</li>
+            <li class="flex items-center gap-3 text-sm text-neutral-300"><span class="iconify text-yellow-400 text-lg flex-shrink-0" data-icon="mdi:gift"></span><span class="text-yellow-400 font-medium">+ 2 Ebook gratis (Rp 158.000)</span></li>
+          </ul>
+          <a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" target="_blank" rel="noopener noreferrer" class="cta-btn pulse-glow block text-center px-8 py-4 rounded-full text-lg font-semibold text-white">&#128640; BAYAR SEKARANG</a>
+        </div>
+      </div>
+      <div class="text-center space-y-4"><p class="text-xl text-neutral-300">Total investasi PriceCraft: <span class="text-brand-400 font-bold text-2xl">Rp 97.000</span> sekali seumur hidup!</p><p class="text-neutral-500 text-sm italic">*Dengan harga secangkir kopi Starbucks, kamu dapat tools yang bisa meningkatkan profit jualanmu selamanya.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimoni" class="relative py-20 md:py-32 overflow-hidden">
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-500/5 rounded-full blur-[100px] -z-10"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16"><div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#128172;</span><span class="text-sm font-medium text-brand-400">Testimoni</span></div><h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Apa Kata Mereka yang</span> <span class="text-brand-400">Sudah Pakai?</span></h2></div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="testimonial-card rounded-2xl p-6"><div class="flex items-center gap-1 mb-4"><span class="text-yellow-400 text-sm">&#11088;&#11088;&#11088;&#11088;&#11088;</span></div><p class="text-neutral-300 text-sm leading-relaxed mb-5">"Dulu saya selalu rugi karena salah hitung harga. Sekarang pakai PriceCraft, setiap produk yang saya listing pasti untung. Tinggal input harga modal, langsung tahu harus jual berapa."</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/rina/48/48.jpg" class="w-10 h-10 rounded-full" alt="" /><div><p class="text-white text-sm font-semibold">Rina S.</p><p class="text-neutral-500 text-xs">Seller Shopee, Jakarta</p></div></div></div>
+        <div class="testimonial-card rounded-2xl p-6"><div class="flex items-center gap-1 mb-4"><span class="text-yellow-400 text-sm">&#11088;&#11088;&#11088;&#11088;&#11088;</span></div><p class="text-neutral-300 text-sm leading-relaxed mb-5">"Fitur HPP-nya yang paling berguna. Saya jadi tahu modal beneran per produk. Dulu cuma tebak-tebak, sekarang sudah presisi. Best investment!"</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/ahmad/48/48.jpg" class="w-10 h-10 rounded-full" alt="" /><div><p class="text-white text-sm font-semibold">Ahmad F.</p><p class="text-neutral-500 text-xs">Seller TikTok Shop, Bandung</p></div></div></div>
+        <div class="testimonial-card rounded-2xl p-6"><div class="flex items-center gap-1 mb-4"><span class="text-yellow-400 text-sm">&#11088;&#11088;&#11088;&#11088;&#11088;</span></div><p class="text-neutral-300 text-sm leading-relaxed mb-5">"Saya sudah coba banyak tools, tapi semuanya berlangganan. PriceCraft cuma bayar sekali tapi fiturnya jauh lebih lengkap. Kalkulator BEP-nya juga sangat membantu rencana bisnis saya."</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/diana/48/48.jpg" class="w-10 h-10 rounded-full" alt="" /><div><p class="text-white text-sm font-semibold">Diana M.</p><p class="text-neutral-500 text-xs">Seller Tokopedia &amp; Shopee, Surabaya</p></div></div></div>
+        <div class="testimonial-card rounded-2xl p-6"><div class="flex items-center gap-1 mb-4"><span class="text-yellow-400 text-sm">&#11088;&#11088;&#11088;&#11088;&#11088;</span></div><p class="text-neutral-300 text-sm leading-relaxed mb-5">"Sebagai dropshipper, saya harus cek harga di 4 marketplace sekaligus. PriceCraft bikin prosesnya super cepat. Dari yang biasa 15 menit, sekarang cuma 30 detik!"</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/budi/48/48.jpg" class="w-10 h-10 rounded-full" alt="" /><div><p class="text-white text-sm font-semibold">Budi P.</p><p class="text-neutral-500 text-xs">Dropshipper, Yogyakarta</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GUARANTEE ===== -->
+  <section class="relative py-20 md:py-32 overflow-hidden noise-overlay">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-500/5 rounded-full blur-[100px] -z-10"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center p-8 md:p-12 rounded-3xl green-border-glow" style="background:linear-gradient(to bottom right,rgba(34,197,94,0.05),rgba(20,20,20,0.5))">
+        <div class="w-20 h-20 rounded-full bg-brand-500/10 flex items-center justify-center mx-auto mb-6"><span class="iconify text-brand-400 text-4xl" data-icon="mdi:shield-check"></span></div>
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Garansi Uang Kembali 7 Hari</h2>
+        <p class="text-neutral-300 text-base md:text-lg leading-relaxed mb-6">Kami yakin 100% PriceCraft akan membantu bisnis onlinemu. Tapi kalau dalam 7 hari kamu merasa tools ini tidak membantu sama sekali, kami akan mengembalikan uangmu <span class="text-brand-400 font-semibold">100%</span>. Tanpa syarat. Tanpa ribet.</p>
+        <div class="p-4 rounded-xl bg-brand-500/5 border border-brand-500/10"><p class="text-brand-400 font-semibold">&#128737;&#65039; Risiko 100% ada di kami. Kamu tidak punya apa-apa untuk kehilangan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="relative py-20 md:py-32 overflow-hidden grid-bg">
+    <div class="absolute inset-0 -z-10" style="background:linear-gradient(to bottom,rgba(34,197,94,0.05),transparent,transparent)"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-full" style="filter:blur(150px);z-index:-10"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center section-hidden">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-8"><span class="text-lg">&#128640;</span><span class="text-sm font-medium text-brand-400">Saatnya Bertindak!</span></div>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6"><span class="text-white">Siap Tingkatkan</span><br /><span class="text-brand-400">Profit Jualanmu?</span></h2>
+      <p class="text-lg md:text-xl text-neutral-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">Jangan buang waktu lagi menebak-nebak harga jual. Jangan bayar tools mahal tiap bulan. Mulai sekarang, hitung harga jual dengan tepat — pakai <span class="text-brand-400 font-medium">PriceCraft</span>.</p>
+      <div class="mb-8"><a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" target="_blank" rel="noopener noreferrer" class="cta-btn pulse-glow inline-flex items-center gap-3 px-10 md:px-14 py-5 md:py-6 rounded-full text-xl md:text-2xl font-bold text-white">&#128640; BAYAR SEKARANG — Rp 97.000</a><p class="text-neutral-500 text-sm mt-4">*Klik tombol di atas untuk checkout</p></div>
+      <div class="inline-block p-5 rounded-2xl bg-red-500/5 border border-red-500/15">
+        <p class="text-red-400 font-semibold text-base md:text-lg mb-2">&#128293; Harga promo Rp 97.000 hanya berlaku untuk 100 pembeli pertama!</p>
+        <p class="text-neutral-400 text-sm">Setelah itu harga kembali normal <span class="line-through">Rp 149.000</span>. Sisa slot: <span id="slot-count" class="text-red-400 font-bold text-lg">27</span>/100</p>
+        <div class="mt-3 w-full bg-dark-100 rounded-full h-3 overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:73%;background:linear-gradient(to right,#22c55e,#4ade80)"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="relative py-20 md:py-32 overflow-hidden">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 section-hidden">
+      <div class="text-center mb-16"><div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/20 bg-brand-500/5 mb-6"><span class="text-lg">&#10067;</span><span class="text-sm font-medium text-brand-400">FAQ</span></div><h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4"><span class="text-white">Pertanyaan yang</span> <span class="text-brand-400">Sering Ditanyakan</span></h2></div>
+      <div class="space-y-3">
+        <div class="faq-item rounded-2xl bg-dark-50/50 overflow-hidden"><button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left"><span class="text-white font-medium text-sm md:text-base pr-4">Apakah benar cuma bayar sekali?</span><span class="iconify text-brand-400 text-xl flex-shrink-0 transition-transform duration-300" data-icon="mdi:chevron-down"></span></button><div class="faq-answer px-5 md:px-6"><p class="text-neutral-400 text-sm leading-relaxed pb-5 md:pb-6">Ya, 100% benar. Kamu bayar Rp 97.000 sekali, dan bisa pakai PriceCraft selamanya. Tidak ada biaya bulanan, tidak ada biaya tersembunyi.</p></div></div>
+        <div class="faq-item rounded-2xl bg-dark-50/50 overflow-hidden"><button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left"><span class="text-white font-medium text-sm md:text-base pr-4">Bagaimana cara mengakses PriceCraft setelah bayar?</span><span class="iconify text-brand-400 text-xl flex-shrink-0 transition-transform duration-300" data-icon="mdi:chevron-down"></span></button><div class="faq-answer px-5 md:px-6"><p class="text-neutral-400 text-sm leading-relaxed pb-5 md:pb-6">Setelah pembayaran dikonfirmasi, kamu akan mendapatkan link akses PriceCraft + kode akses. Buka di browser HP atau laptop, langsung bisa pakai.</p></div></div>
+        <div class="faq-item rounded-2xl bg-dark-50/50 overflow-hidden"><button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left"><span class="text-white font-medium text-sm md:text-base pr-4">Apakah bisa diakses dari HP?</span><span class="iconify text-brand-400 text-xl flex-shrink-0 transition-transform duration-300" data-icon="mdi:chevron-down"></span></button><div class="faq-answer px-5 md:px-6"><p class="text-neutral-400 text-sm leading-relaxed pb-5 md:pb-6">Tentu! PriceCraft sudah responsive dan bisa diakses dari HP, tablet, maupun laptop.</p></div></div>
+        <div class="faq-item rounded-2xl bg-dark-50/50 overflow-hidden"><button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left"><span class="text-white font-medium text-sm md:text-base pr-4">Apakah fee marketplace selalu update?</span><span class="iconify text-brand-400 text-xl flex-shrink-0 transition-transform duration-300" data-icon="mdi:chevron-down"></span></button><div class="faq-answer px-5 md:px-6"><p class="text-neutral-400 text-sm leading-relaxed pb-5 md:pb-6">Ya, PriceCraft menggunakan data fee marketplace terbaru untuk memastikan perhitungan selalu akurat.</p></div></div>
+        <div class="faq-item rounded-2xl bg-dark-50/50 overflow-hidden"><button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left"><span class="text-white font-medium text-sm md:text-base pr-4">Kalau tidak puas, bisa refund?</span><span class="iconify text-brand-400 text-xl flex-shrink-0 transition-transform duration-300" data-icon="mdi:chevron-down"></span></button><div class="faq-answer px-5 md:px-6"><p class="text-neutral-400 text-sm leading-relaxed pb-5 md:pb-6">Bisa! Kami memberikan garansi uang kembali 7 hari. Kalau tidak puas, hubungi kami dan uangmu dikembalikan 100%.</p></div></div>
+        <div class="faq-item rounded-2xl bg-dark-50/50 overflow-hidden"><button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left"><span class="text-white font-medium text-sm md:text-base pr-4">Bonus ebooknya apa saja?</span><span class="iconify text-brand-400 text-xl flex-shrink-0 transition-transform duration-300" data-icon="mdi:chevron-down"></span></button><div class="faq-answer px-5 md:px-6"><p class="text-neutral-400 text-sm leading-relaxed pb-5 md:pb-6">Kamu akan mendapat 2 ebook gratis: "Panduan Lengkap Cara Jualan di Marketplace (Shopee) untuk Pemula" dan "Panduan 30 Hari Sukses Jualan di Marketplace" (total nilai Rp 158.000).</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="relative py-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="#" class="flex items-center gap-3 group"><img src="https://z-cdn-media.chatglm.cn/files/e34bdd10-ef14-46d6-890c-cb0131309c01.png?auth_key=1878468658-296b2fa3b94346ed9fdf8fadb8e7986c-0-7d4a9c1e5b8af71b1fe91da6f1f55a07" alt="PriceCraft Logo" class="h-9 w-auto rounded-lg transition-transform duration-300 group-hover:scale-105" /><span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">Price<span class="text-brand-400">Craft</span></span></a>
+        <div class="text-center md:text-right"><p class="text-neutral-500 text-sm">PriceCraft — Tools Kalkulator Harga Jual #1 Indonesia</p><p class="text-neutral-600 text-xs mt-1">&copy; 2025 PriceCraft. All rights reserved. Dibuat khusus untuk seller Indonesia &#127470;&#127465;</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Floating CTA Mobile ===== -->
+  <div id="floating-cta" class="fixed bottom-0 left-0 right-0 z-40 p-4 md:hidden transition-transform duration-300" style="transform:translateY(100%)"><a href="https://pricecraft.form.id/pricecraft-full-access---tools-kalkulator-hpp--bep---harga-jual" target="_blank" rel="noopener noreferrer" class="cta-btn block text-center px-6 py-4 rounded-2xl text-base font-semibold text-white shadow-2xl">&#128640; Beli Sekarang — Rp 97.000</a></div>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div id="toast" class="toast fixed top-20 right-4 md:top-24 md:right-6 z-50 max-w-sm p-4 rounded-2xl bg-dark-50 border border-brand-500/20 shadow-2xl" style="backdrop-filter:blur(20px)">
+    <div class="flex items-start gap-3">
+      <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-500/10 flex items-center justify-center"><span class="iconify text-brand-400 text-xl" data-icon="mdi:account-check"></span></div>
+      <div><p class="text-white text-sm font-medium" id="toast-name">Seseorang dari Jakarta</p><p class="text-neutral-400 text-xs" id="toast-text">baru saja membeli PriceCraft</p><p class="text-neutral-600 text-xs mt-1" id="toast-time">2 menit yang lalu</p></div>
+      <button onclick="hideToast()" class="text-neutral-500 hover:text-white ml-2 flex-shrink-0"><span class="iconify text-lg" data-icon="mdi:close"></span></button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Inline JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ===== Add reveal-wait class to sections AFTER page loads =====
+  var sections = document.querySelectorAll('.section-hidden');
+  sections.forEach(function (s) {
+    s.classList.add('reveal-wait');
+  });
+
+  // ===== Particle Animation =====
+  var canvas = document.getElementById('particles-canvas');
+  if (canvas) {
+    var ctx = canvas.getContext('2d');
+    var PC = 60;
+    var particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function Particle() {
+      this.x = 0; this.y = 0; this.size = 0; this.speedX = 0; this.speedY = 0; this.opacity = 0;
+      this.reset();
+    }
+    Particle.prototype.reset = function () {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.3;
+      this.speedY = (Math.random() - 0.5) * 0.3;
+      this.opacity = Math.random() * 0.3 + 0.05;
+    };
+    Particle.prototype.update = function () {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    };
+    Particle.prototype.draw = function () {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(34,197,94,' + this.opacity + ')';
+      ctx.fill();
+    };
+
+    for (var i = 0; i < PC; i++) particles.push(new Particle());
+
+    function drawConnections() {
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(34,197,94,' + (0.03 * (1 - dist / 150)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      drawConnections();
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  }
+
+  // ===== Mobile Menu =====
+  var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  var mobileMenuClose = document.getElementById('mobile-menu-close');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var mobileLinks = document.querySelectorAll('.mobile-link');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+  if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
+  mobileLinks.forEach(function (l) { l.addEventListener('click', closeMenu); });
+
+  // ===== Navbar Scroll =====
+  var navbar = document.getElementById('navbar');
+  function handleNavbarScroll() {
+    if (navbar) {
+      navbar.style.borderBottom = window.pageYOffset > 80 ? '1px solid rgba(34,197,94,0.1)' : 'none';
+    }
+  }
+  window.addEventListener('scroll', handleNavbarScroll);
+
+  // ===== Floating CTA =====
+  var floatingCta = document.getElementById('floating-cta');
+  function handleFloatingCta() {
+    if (floatingCta) {
+      floatingCta.style.transform = window.pageYOffset > 600 ? 'translateY(0)' : 'translateY(100%)';
+    }
+  }
+  window.addEventListener('scroll', handleFloatingCta);
+
+  // ===== Section Reveal (IntersectionObserver) =====
+  var sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('section-visible');
+        e.target.classList.remove('reveal-wait');
+        sectionObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  sections.forEach(function (s) { sectionObserver.observe(s); });
+
+  // ===== Toast Notifications =====
+  var toastNames = [
+    { name: 'Rina dari Jakarta', time: '2 menit lalu' },
+    { name: 'Ahmad dari Bandung', time: '5 menit lalu' },
+    { name: 'Diana dari Surabaya', time: '8 menit lalu' },
+    { name: 'Budi dari Yogyakarta', time: '12 menit lalu' },
+    { name: 'Sari dari Semarang', time: '15 menit lalu' },
+    { name: 'Andi dari Medan', time: '20 menit lalu' },
+  ];
+  var toastIndex = 0;
+
+  function showToast() {
+    var toast = document.getElementById('toast');
+    if (!toast) return;
+    var data = toastNames[toastIndex % toastNames.length];
+    var nameEl = document.getElementById('toast-name');
+    var timeEl = document.getElementById('toast-time');
+    if (nameEl) nameEl.textContent = data.name;
+    if (timeEl) timeEl.textContent = data.time;
+    toast.classList.add('show');
+    toastIndex++;
+    setTimeout(function () { toast.classList.remove('show'); }, 4000);
+  }
+
+  setTimeout(function () {
+    showToast();
+    setInterval(showToast, 25000);
+  }, 8000);
+
+  // ===== Slot Count Animation =====
+  var slotEl = document.getElementById('slot-count');
+  if (slotEl) {
+    var target = 27;
+    var current = 0;
+    function step() {
+      if (current < target) {
+        current++;
+        slotEl.textContent = String(current);
+        setTimeout(step, 50);
+      }
+    }
+    var slotObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          step();
+          slotObserver.unobserve(e.target);
+        }
+      });
+    });
+    slotObserver.observe(slotEl);
+  }
+
+  // ===== Smooth Scroll =====
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var href = a.getAttribute('href');
+      if (href) {
+        var t = document.querySelector(href);
+        if (t) {
+          window.scrollTo({
+            top: t.getBoundingClientRect().top + window.pageYOffset - 80,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  // ===== FAQ Toggle =====
+  document.querySelectorAll('.faq-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var answer = btn.nextElementSibling;
+      var icon = btn.querySelector('.iconify');
+      var isOpen = answer && answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(function (a) { a.classList.remove('open'); });
+      document.querySelectorAll('.faq-btn .iconify').forEach(function (i) { i.style.transform = 'rotate(0deg)'; });
+      if (!isOpen && answer) {
+        answer.classList.add('open');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // ===== Screenshot Tab Switching =====
+  window.switchTab = function (tabName) {
+    document.querySelectorAll('.screenshot-panel').forEach(function (p) { p.classList.remove('active'); });
+    document.querySelectorAll('.screenshot-tab').forEach(function (t) {
+      t.classList.remove('active');
+      t.style.borderColor = 'rgba(255,255,255,0.1)';
+      t.style.background = 'rgba(255,255,255,0.02)';
+      t.querySelectorAll('span').forEach(function (s) {
+        if (s.classList.contains('iconify')) return;
+        s.classList.remove('text-brand-400');
+        s.classList.add('text-neutral-400');
+      });
+    });
+    var panel = document.getElementById('tab-' + tabName);
+    var activeBtn = document.querySelector('[data-tab="' + tabName + '"]');
+    if (panel) panel.classList.add('active');
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+      activeBtn.style.borderColor = 'rgba(34,197,94,0.6)';
+      activeBtn.style.background = 'rgba(34,197,94,0.1)';
+      activeBtn.querySelectorAll('span').forEach(function (s) {
+        if (s.classList.contains('iconify')) return;
+        s.classList.remove('text-neutral-400');
+        s.classList.add('text-brand-400');
+      });
+    }
+  };
+
+  // ===== Toast Dismiss =====
+  window.hideToast = function () {
+    var toast = document.getElementById('toast');
+    if (toast) toast.classList.remove('show');
+  };
+
+});
+</script>
+
+</body>
+</html>
